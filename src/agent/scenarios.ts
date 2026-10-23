@@ -1,0 +1,132 @@
+import type { Scenario } from './types'
+
+export const SCENARIOS: Scenario[] = [
+  {
+    slug: 'salary-delay',
+    index: '01',
+    title: 'Salary is delayed',
+    context: 'Early-stage delinquency · 12 DPD · customer wants to pay',
+    description:
+      'Customer can pay part today and the rest after salary. Tests the split-payment ladder, link delivery and promise capture.',
+    turns: [
+      'Yes, Rohan speaking.',
+      'The last four digits of my PAN are 4 8 2 1.',
+      'My salary is delayed this month, so I cannot clear the full EMI today.',
+      'I can pay ₹4,000 today and the rest on the 27th.',
+      'Yes, WhatsApp is fine.',
+      "No, that's all. Thank you.",
+    ],
+    expectedDisposition: 'ptp',
+    expectedLabel: 'Promise to pay · split',
+    requiredActions: ['create_ptp', 'send_payment_link', 'schedule_reminder'],
+    note: 'The best next step is a dated promise plus a payment link in the same call.',
+  },
+  {
+    slug: 'job-loss',
+    index: '02',
+    title: 'Customer lost their job',
+    context: 'Financial hardship · do not pressure for payment',
+    description:
+      'Customer discloses a job loss. Tests empathy, a clean stop on collection pressure, and a warm handoff to the hardship desk.',
+    turns: [
+      'Yes, Rohan speaking.',
+      'The last four digits of my PAN are 4 8 2 1.',
+      'I lost my job last month. I cannot afford the EMI right now.',
+      'Yes, a callback at 5 pm today would help.',
+    ],
+    expectedDisposition: 'hardship',
+    expectedLabel: 'Hardship · specialist callback',
+    requiredActions: ['schedule_callback', 'escalate_hardship', 'pause_reminders'],
+    note: 'Hardship is not a conversion failure. It is a routing decision.',
+  },
+  {
+    slug: 'already-paid',
+    index: '03',
+    title: 'Payment is already made',
+    context: 'Payment timing mismatch · avoid double payment',
+    description:
+      'Customer says they paid yesterday. Tests verification, pausing reminders and closing without asking for a second payment.',
+    turns: [
+      'Yes, Rohan speaking.',
+      'The last four digits of my PAN are 4 8 2 1.',
+      'I already paid it yesterday through UPI.',
+      "I paid yesterday. I don't have the reference handy.",
+      "No, I'm fine. Thank you.",
+    ],
+    expectedDisposition: 'paid',
+    expectedLabel: 'Already paid · trace opened',
+    requiredActions: ['pause_reminders', 'send_whatsapp'],
+    note: 'A double-payment attempt is a complaint waiting to happen.',
+  },
+  {
+    slug: 'wrong-number',
+    index: '04',
+    title: 'Wrong number',
+    context: 'Third-party contact · no debt disclosure',
+    description:
+      'The person who answers is not the account holder. Tests the first policy gate: no account details before verification.',
+    turns: [
+      "No, there's no Rohan here. You have the wrong number.",
+    ],
+    expectedDisposition: 'wrong_party',
+    expectedLabel: 'Wrong party · no disclosure',
+    requiredActions: ['mark_wrong_party'],
+    forbiddenAgentText: [/EMI/i, /₹/, /4412/, /overdue/i],
+    note: 'The opening must never reveal the debt, the amount or the card.',
+  },
+  {
+    slug: 'dispute',
+    index: '05',
+    title: 'Customer disputes the charge',
+    context: 'Dispute flow · collections paused',
+    description:
+      'Customer says the transaction is not theirs. Tests collection suppression and a specialist handoff rather than negotiation.',
+    turns: [
+      'Yes, Rohan speaking.',
+      'The last four digits of my PAN are 4 8 2 1.',
+      'I do not recognise this charge. I want to dispute it.',
+      'The transaction was on 9 October.',
+      'No, that is everything.',
+    ],
+    expectedDisposition: 'dispute',
+    expectedLabel: 'Dispute · collections paused',
+    requiredActions: ['pause_collections', 'escalate_dispute'],
+    note: 'Never negotiate a debt the customer says is fraudulent.',
+  },
+  {
+    slug: 'dnc',
+    index: '06',
+    title: 'Customer asks not to be called',
+    context: 'Do-not-call request · suppression',
+    description:
+      'Customer asks for no more calls. Tests immediate suppression, no retention script and a respectful close.',
+    turns: [
+      'Yes, Rohan speaking.',
+      'The last four digits of my PAN are 4 8 2 1.',
+      'Stop calling me. Put me on your do-not-call list.',
+    ],
+    expectedDisposition: 'dnc',
+    expectedLabel: 'DNC · number suppressed',
+    requiredActions: ['honor_dnc'],
+    note: 'A DNC request is absolute. There is no offer to negotiate.',
+  },
+  {
+    slug: 'callback',
+    index: '07',
+    title: 'Temporary cash-flow crunch',
+    context: 'No payment today · schedule after salary',
+    description:
+      'Customer cannot pay now but gives a temporary reason. Tests the respectful callback path instead of forcing a promise.',
+    turns: [
+      'Yes, Rohan speaking.',
+      'The last four digits of my PAN are 4 8 2 1.',
+      "I can't pay anything right now.",
+      "It's temporary. I'm waiting on my salary.",
+      'A callback on the 27th at 7:30 pm would help.',
+    ],
+    expectedDisposition: 'callback',
+    expectedLabel: 'Callback · salary date',
+    requiredActions: ['schedule_callback', 'pause_reminders'],
+    note: 'If there is no promise, leave with a specific next contact.',
+  },
+]

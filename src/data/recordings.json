@@ -1,0 +1,356 @@
+[
+  {
+    "slug": "salary-delay",
+    "title": "Salary delay → split promise",
+    "context": "Early collections · 12 DPD",
+    "outcome": "Promise to pay",
+    "outcomeTone": "good",
+    "summary": "Rohan can pay part today and the rest after salary. The agent captures a dated promise, sends the UPI link and schedules a reminder.",
+    "audio": "/audio/salary-delay.mp3",
+    "duration": 116.81,
+    "turns": [
+      {
+        "speaker": "agent",
+        "text": "Namaste, I'm Ananya, Axis Bank's AI assistant. This call is recorded. Am I speaking with Mr. Mehta?",
+        "start": 0.24,
+        "end": 9.94
+      },
+      {
+        "speaker": "customer",
+        "text": "Yes, Rohan speaking.",
+        "start": 10.36,
+        "end": 12.92
+      },
+      {
+        "speaker": "agent",
+        "text": "Thank you. To protect your account, could you confirm the last four digits of the PAN registered with us?",
+        "start": 13.34,
+        "end": 21.17
+      },
+      {
+        "speaker": "customer",
+        "text": "The last four digits are 4 8 2 1.",
+        "start": 21.59,
+        "end": 25.96
+      },
+      {
+        "speaker": "agent",
+        "text": "Thank you. Your EMI of ₹7,840 was due on 11 October and is now 12 days overdue. I'm calling to help you clear it or find a plan. What's making it difficult to pay?",
+        "start": 26.38,
+        "end": 41.74
+      },
+      {
+        "speaker": "customer",
+        "text": "My salary is delayed this month, so I can't clear the full EMI today.",
+        "start": 42.16,
+        "end": 48.42
+      },
+      {
+        "speaker": "agent",
+        "text": "I understand. Salary timing can make a clean payment hard. Would it help to split it: a part payment today, and the rest on 27 October?",
+        "start": 48.84,
+        "end": 60.0
+      },
+      {
+        "speaker": "customer",
+        "text": "I can pay ₹4,000 today, and the rest on the 27th.",
+        "start": 60.42,
+        "end": 66.06
+      },
+      {
+        "speaker": "agent",
+        "text": "That works. I can send a secure UPI link for ₹4,000 now, and set the remaining ₹3,840 for 27 October. I'll also send a reminder 24 hours before. Would you like the link on WhatsApp?",
+        "start": 66.48,
+        "end": 83.74
+      },
+      {
+        "speaker": "customer",
+        "text": "Yes, WhatsApp is fine.",
+        "start": 84.16,
+        "end": 87.06
+      },
+      {
+        "speaker": "agent",
+        "text": "Done. I've noted ₹4,000 today and ₹3,840 by 27 October. I'm sending the secure UPI link and a WhatsApp confirmation now, with a reminder 24 hours before. Is there anything else I can help with?",
+        "start": 87.48,
+        "end": 105.34
+      },
+      {
+        "speaker": "customer",
+        "text": "No, that's all. Thank you.",
+        "start": 105.76,
+        "end": 109.33
+      },
+      {
+        "speaker": "agent",
+        "text": "Thank you, Mr. Mehta. I appreciate your time. Goodbye.",
+        "start": 109.75,
+        "end": 116.14
+      }
+    ]
+  },
+  {
+    "slug": "hardship",
+    "title": "Job loss → hardship handoff",
+    "context": "Financial hardship · do not pressure",
+    "outcome": "Specialist handoff",
+    "outcomeTone": "warm",
+    "summary": "Meera has lost her job. The agent stops payment pressure, explains the next step and books a specialist callback at 5 pm.",
+    "audio": "/audio/hardship.mp3",
+    "duration": 82.03,
+    "turns": [
+      {
+        "speaker": "agent",
+        "text": "Namaste, I'm Ananya, Axis Bank's AI assistant. This call is recorded. Am I speaking with Ms. Nair?",
+        "start": 0.24,
+        "end": 9.79
+      },
+      {
+        "speaker": "customer",
+        "text": "Yes, Meera speaking.",
+        "start": 10.21,
+        "end": 13.04
+      },
+      {
+        "speaker": "agent",
+        "text": "Thank you. To protect your account, could you confirm the last four digits of the PAN registered with us?",
+        "start": 13.46,
+        "end": 21.29
+      },
+      {
+        "speaker": "customer",
+        "text": "4 8 2 1.",
+        "start": 21.71,
+        "end": 24.95
+      },
+      {
+        "speaker": "agent",
+        "text": "Thank you. Your EMI of ₹12,450 was due on 9 October and is now 14 days overdue. I'm calling to help you clear it or find a plan. What's making it difficult to pay?",
+        "start": 25.37,
+        "end": 40.46
+      },
+      {
+        "speaker": "customer",
+        "text": "I lost my job last month. I can't afford the EMI right now.",
+        "start": 40.88,
+        "end": 47.22
+      },
+      {
+        "speaker": "agent",
+        "text": "I'm sorry you're going through that. I won't push for a payment today. I can connect you with a specialist who can check EMI restructuring or a suitable plan. Would a callback today at 5 pm work?",
+        "start": 47.64,
+        "end": 61.94
+      },
+      {
+        "speaker": "customer",
+        "text": "Yes, 5 pm works.",
+        "start": 62.36,
+        "end": 65.39
+      },
+      {
+        "speaker": "agent",
+        "text": "Thank you. I've arranged a callback for 5 pm today. A specialist will review EMI restructuring and other options with you. I've paused automated reminders in the meantime. Take care.",
+        "start": 65.81,
+        "end": 81.36
+      }
+    ]
+  },
+  {
+    "slug": "already-paid",
+    "title": "Payment already made → trace opened",
+    "context": "Payment trace · verification requested",
+    "outcome": "Payment trace",
+    "outcomeTone": "steady",
+    "summary": "Neha has already paid yesterday through UPI. The agent pauses reminders, avoids a duplicate payment request, and sends a verification prompt.",
+    "audio": "/audio/already-paid.mp3",
+    "duration": 82.51,
+    "turns": [
+      {
+        "speaker": "agent",
+        "text": "Namaste, I'm Ananya, Axis Bank's AI assistant. This call is recorded. Am I speaking with Ms. Vasanth?",
+        "start": 0.24,
+        "end": 9.86
+      },
+      {
+        "speaker": "customer",
+        "text": "Yes, speaking.",
+        "start": 10.28,
+        "end": 12.4
+      },
+      {
+        "speaker": "agent",
+        "text": "Thank you. For account security, could you confirm the last four digits of the PAN registered with us?",
+        "start": 12.82,
+        "end": 20.9
+      },
+      {
+        "speaker": "customer",
+        "text": "4 8 2 1.",
+        "start": 21.32,
+        "end": 24.08
+      },
+      {
+        "speaker": "agent",
+        "text": "Thank you. Your EMI of ₹9,300 was due on 8 October and is now 18 days overdue. I'm calling to help you clear it or find a plan. What's making it difficult to pay?",
+        "start": 24.5,
+        "end": 39.29
+      },
+      {
+        "speaker": "customer",
+        "text": "Actually, I already paid it yesterday through UPI.",
+        "start": 39.71,
+        "end": 44.27
+      },
+      {
+        "speaker": "agent",
+        "text": "Thank you. When did you pay, and do you have the payment reference handy?",
+        "start": 44.69,
+        "end": 50.62
+      },
+      {
+        "speaker": "customer",
+        "text": "I paid yesterday. I don't have the reference handy.",
+        "start": 51.04,
+        "end": 56.03
+      },
+      {
+        "speaker": "agent",
+        "text": "No problem. I'll pause reminders while the payment is traced. If it doesn't reflect within 48 hours, reply to the SMS with your payment reference. I'm sending a confirmation on WhatsApp now. Anything else?",
+        "start": 56.45,
+        "end": 72.72
+      },
+      {
+        "speaker": "customer",
+        "text": "No, thank you.",
+        "start": 73.14,
+        "end": 75.18
+      },
+      {
+        "speaker": "agent",
+        "text": "Thank you, Ms. Vasanth. I appreciate your time. Goodbye.",
+        "start": 75.6,
+        "end": 81.84
+      }
+    ]
+  },
+  {
+    "slug": "dispute",
+    "title": "Disputed charge → collections paused",
+    "context": "Dispute flow · specialist handoff",
+    "outcome": "Dispute handoff",
+    "outcomeTone": "steady",
+    "summary": "Priya says the transaction was not hers. The agent pauses collections on the disputed amount and routes the case to a specialist.",
+    "audio": "/audio/dispute.mp3",
+    "duration": 71.45,
+    "turns": [
+      {
+        "speaker": "agent",
+        "text": "Namaste, I'm Ananya, Axis Bank's AI assistant. This call is recorded. Am I speaking with Ms. Ramachandran?",
+        "start": 0.24,
+        "end": 10.13
+      },
+      {
+        "speaker": "customer",
+        "text": "Yes, speaking.",
+        "start": 10.55,
+        "end": 12.95
+      },
+      {
+        "speaker": "agent",
+        "text": "Thank you. Could you confirm the last four digits of the PAN registered with us?",
+        "start": 13.37,
+        "end": 19.75
+      },
+      {
+        "speaker": "customer",
+        "text": "4 8 2 1.",
+        "start": 20.17,
+        "end": 23.41
+      },
+      {
+        "speaker": "agent",
+        "text": "Thank you. Your EMI of ₹6,800 was due on 9 October and is now 14 days overdue. I'm calling to help you clear it or find a plan. What's making it difficult to pay?",
+        "start": 23.83,
+        "end": 38.52
+      },
+      {
+        "speaker": "customer",
+        "text": "I don't recognise this charge. I want to dispute it. The transaction was on the 9th.",
+        "start": 38.94,
+        "end": 47.15
+      },
+      {
+        "speaker": "agent",
+        "text": "I understand. I'll pause collections on the disputed amount and route the case to a specialist. Please don't share card details with anyone. A specialist will call you within one working day. Anything else?",
+        "start": 47.57,
+        "end": 63.12
+      },
+      {
+        "speaker": "customer",
+        "text": "No, that's all.",
+        "start": 63.54,
+        "end": 65.99
+      },
+      {
+        "speaker": "agent",
+        "text": "Thank you, Ms. Ramachandran. Goodbye.",
+        "start": 66.41,
+        "end": 70.78
+      }
+    ]
+  },
+  {
+    "slug": "dnc",
+    "title": "Do-not-call → number suppressed",
+    "context": "DNC request · immediate suppression",
+    "outcome": "DNC recorded",
+    "outcomeTone": "warning",
+    "summary": "Sanjay asks for no more calls. The agent honours the request immediately, with no retention script and no further pressure.",
+    "audio": "/audio/dnc.mp3",
+    "duration": 54.19,
+    "turns": [
+      {
+        "speaker": "agent",
+        "text": "Namaste, I'm Ananya, Axis Bank's AI assistant. This call is recorded. Am I speaking with Mr. Bhandari?",
+        "start": 0.24,
+        "end": 10.06
+      },
+      {
+        "speaker": "customer",
+        "text": "Yes, speaking.",
+        "start": 10.48,
+        "end": 12.59
+      },
+      {
+        "speaker": "agent",
+        "text": "Thank you. Could you confirm the last four digits of the PAN registered with us?",
+        "start": 13.01,
+        "end": 19.39
+      },
+      {
+        "speaker": "customer",
+        "text": "4 8 2 1.",
+        "start": 19.81,
+        "end": 22.57
+      },
+      {
+        "speaker": "agent",
+        "text": "Thank you. Your EMI of ₹5,000 was due on 16 October and is now 7 days overdue. I'm calling to help you clear it or find a plan. What's making it difficult to pay?",
+        "start": 22.99,
+        "end": 37.18
+      },
+      {
+        "speaker": "customer",
+        "text": "Stop calling me. Put me on your do-not-call list.",
+        "start": 37.6,
+        "end": 42.59
+      },
+      {
+        "speaker": "agent",
+        "text": "Understood. I'm recording your request now and will stop collection calls to this number. You won't need to repeat it. Thank you.",
+        "start": 43.01,
+        "end": 53.52
+      }
+    ]
+  }
+]
